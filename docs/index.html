@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse</title>
+<meta name="description" content="공연·행사 현장 음원 재생 프로그램. 큐 재생, 페이드, 레벨 자동 맞춤.">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg:#fafafb; --card:#fff; --ink:#202124; --sub:#6e7178; --line:#e1e3e8; --accent:#2563eb; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16171a; --card:#1f2024; --ink:#ececee; --sub:#a1a4ab; --line:#33353b; --accent:#4f86f7; } }
+  * { box-sizing:border-box; }
+  [hidden] { display:none !important; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 "Pretendard","맑은 고딕","Malgun Gothic",system-ui,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:56px 16px 72px; }
+  header { display:flex; align-items:center; gap:16px; }
+  header img { width:64px; height:64px; }
+  h1 { margin:0; font-size:32px; }
+  .lead { color:var(--sub); margin:4px 0 0; }
+  .cta { display:flex; flex-wrap:wrap; gap:12px; margin:32px 0 8px; }
+  .btn { display:inline-block; padding:12px 22px; border-radius:8px; text-decoration:none; font-weight:600; border:1px solid var(--line); color:var(--ink); background:var(--card); }
+  .btn.primary { background:var(--accent); border-color:var(--accent); color:#fff; }
+  .meta { color:var(--sub); font-size:14px; }
+  section { margin-top:40px; }
+  h2 { font-size:20px; margin:0 0 12px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:12px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; }
+  .card b { display:block; margin-bottom:4px; }
+  .card span { color:var(--sub); font-size:14px; }
+  ol { padding-left:20px; }
+  pre { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px 14px; overflow-x:auto; font-size:14px; }
+  footer { margin-top:56px; color:var(--sub); font-size:13px; }
+  footer a { color:var(--sub); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="">
+    <div>
+      <h1>Pulse</h1>
+      <p class="lead">공연·행사 현장 음원 재생 프로그램</p>
+    </div>
+  </header>
+
+  <div class="cta">
+    <a class="btn primary" id="dl" href="#">윈도우용 받기</a>
+    <a class="btn" id="dlmac" href="#">맥용 받기</a>
+    <a class="btn" id="sponsor" href="#" hidden>후원하기</a>
+    <a class="btn" id="feedback" href="https://chal-na.notion.site/2550a4124c6843fcb1086c9edb7d75f3" target="_blank" rel="noopener">버그 신고 · 기능 요청</a>
+  </div>
+  <p class="meta">윈도우 10·11 64비트 · macOS (애플 실리콘 · 인텔)</p>
+
+  <section>
+    <h2>할 수 있는 것</h2>
+    <div class="grid">
+      <div class="card"><b>큐 재생</b><span>목록에서 다음 곡을 미리 걸어 두고 차례로</span></div>
+      <div class="card"><b>페이드</b><span>곡 끝을 부드럽게 줄이며 넘기기</span></div>
+      <div class="card"><b>레벨 자동 맞춤</b><span>곡마다 다른 소리 크기를 맞춰서</span></div>
+      <div class="card"><b>비상 버튼</b><span>문제가 생기면 한 번에 멈춤</span></div>
+      <div class="card"><b>이번 곡 뒤 멈춤</b><span>지금 곡이 끝나면 자동으로 정지</span></div>
+      <div class="card"><b>광고 없음</b><span>무료</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>윈도우에서 파란 경고가 뜨면</h2>
+    <p>Pulse 는 개인이 만든 프로그램이라 아직 코드 서명이 없습니다. 윈도우가 「PC를 보호했습니다」를 띄우면 아래처럼 누르세요.</p>
+    <ol>
+      <li>「추가 정보」를 누릅니다</li>
+      <li>「실행」을 누릅니다</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>맥에서 「확인되지 않은 개발자」가 뜨면</h2>
+    <p>맥용도 아직 애플 서명이 없습니다. 처음 한 번만 아래처럼 열어 주세요.</p>
+    <ol>
+      <li>받은 dmg 를 열고 Pulse 를 「응용 프로그램」 폴더로 끌어 놓습니다</li>
+      <li>Pulse 를 한 번 실행합니다. 경고가 뜨면 「완료」를 누릅니다</li>
+      <li>「시스템 설정 → 개인정보 보호 및 보안」 아래쪽에서 「그래도 열기」를 누릅니다</li>
+      <li>다시 실행하고 「열기」를 누릅니다</li>
+    </ol>
+    <p>「손상되었기 때문에 열 수 없습니다」가 뜨면 터미널에서 아래 한 줄을 실행한 뒤 다시 여세요.</p>
+    <pre><code>xattr -dr com.apple.quarantine /Applications/Pulse.app</code></pre>
+    <p>애플 실리콘(M1·M2·M3·M4) 맥은 apple-silicon, 그 전 맥은 intel 파일을 받으세요.</p>
+  </section>
+
+  <footer>
+    <p>Pulse 는 무료입니다. 쓰다가 도움이 되었다면 후원으로 응원해 주세요.</p>
+      </footer>
+</main>
+<script>
+  // Sponsors 승인되면 위 후원하기 버튼의 hidden 을 지운다
+  const REPO = "arddong/pulse";
+  const SPONSOR = "https://github.com/sponsors/arddong";
+  document.getElementById("dl").href = `https://github.com/${REPO}/releases/latest/download/Pulse_Setup_v1.0.exe`;
+  document.getElementById("dlmac").href = `https://github.com/${REPO}/releases/latest`;
+  document.getElementById("sponsor").href = SPONSOR;
+</script>
+</body>
+</html>
